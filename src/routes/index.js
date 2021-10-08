@@ -1,16 +1,21 @@
-const express = require('express');
-const app = express();
+const express = require("express");
+const router = express.Router();
 
-
-app.get('/', (req, res)=>{
-    res.render('index')
+router.get("/", (req, res) => {
+  res.render("index");
 });
 
-app.get('/new-entry', (req, res)=>
-res.render('new-entry'));
+router.get("/entrada", (req, res) =>{
+    res.render("new-entry");
+}); 
 
-app.use((req, res, next)=>{
-    res.status(404).send('404 Not Found')
-})
+router.post('/new-entry', (req, res)=>{
+  console.log(req.body);
+  res.send('received')
+});
 
-module.exports = app;
+router.use((req, res, next) => {
+  res.status(404).send("404 Not Found");
+});
+
+module.exports = router;
