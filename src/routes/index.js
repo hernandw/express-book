@@ -3,7 +3,7 @@ const app = express();
 
 
 app.get('/', (req, res)=>{
-    res.end('Hola Mundo')
+    res.render('index')
 });
 
 app.use((req, res, next)=>{
