@@ -2,8 +2,10 @@ const express = require("express");
 const router = express.Router();
 const books = [];
 router.get("/", (req, res) => {
-  res.render("index");
-  books
+  res.render("index.ejs", {
+    books
+  });
+  
 });
 
 router.get("/entrada", (req, res) =>{

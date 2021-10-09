@@ -6,15 +6,18 @@
 </head>
 <body>
     <div class="container">
-        <%- books.forEach(function (book) { %>
+        <% books.forEach(function(book){ %>
             <div class="card">
-            <div class="card-body">
+            <div class="card-title">
                 <%= book.title %>
             </div>
+            <div class="card-body">
+                <%= book.author %>
+            </div>
         </div>
-       <%- }); %>
+      <% }); %>    
     </div>
 
- <%= include('partials/footer') %>    
+ <%- include('partials/footer') %>    
 </body>
 </html>
