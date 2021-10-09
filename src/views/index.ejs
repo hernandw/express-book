@@ -6,13 +6,15 @@
 </head>
 <body>
     <div class="container">
-        <div class="card">
+        <%- books.forEach(function (book) { %>
+            <div class="card">
             <div class="card-body">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Et ab eligendi, reiciendis maiores distinctio eaque! Corporis delectus rerum, repellat qui similique doloribus adipisci eos accusamus 
+                <%= book.title %>
             </div>
         </div>
+       <%- }); %>
     </div>
 
- <%- include('partials/footer') %>    
+ <%= include('partials/footer') %>    
 </body>
 </html>

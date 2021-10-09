@@ -1,16 +1,26 @@
 const express = require("express");
 const router = express.Router();
-
+const books = [];
 router.get("/", (req, res) => {
   res.render("index");
+  books
 });
 
 router.get("/entrada", (req, res) =>{
     res.render("new-entry");
 }); 
 
+
+
 router.post('/new-entry', (req, res)=>{
-  console.log(req.body);
+  const {title, author, image, description} = req.body;
+  let newBook = {
+    title,
+    author,
+    image,
+    description
+  }
+  books.push(newBook);
   res.send('received')
 });
 
@@ -19,3 +29,5 @@ router.use((req, res, next) => {
 });
 
 module.exports = router;
+
+console.log(books);
